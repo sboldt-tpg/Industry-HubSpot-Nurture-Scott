@@ -787,19 +787,29 @@ The subject line must be 8 words or fewer. No dashes or hyphens. Must be complet
 === OPENING SENTENCE RULES ===
 The opening sentence is the most important sentence in the email. It must contain a specific, researched observation about ${company} that proves Scott actually looked at their business before writing.
 
-REQUIRED: Choose the STRONGEST available signal as your opening hook. Do not default to the intent topic every time. Rotate across signals across the sequence so each email opens differently.
+THE FIRST SENTENCE IS ALWAYS ABOUT ${company} SPECIFICALLY. NO EXCEPTIONS.
 
-Available hooks — use the best one for THIS email that has not been used in a prior email:
+Do NOT open with "When a [industry] organization is researching..." — that is a generic industry observation, not a company-specific opener. It tells ${firstname} nothing about whether Scott actually looked at their business. Never use it as the first sentence.
 
-- COMPANY NEWS: "I saw that ${company} recently [specific announcement from news block]..." — USE THIS FIRST when fresh news is available. It is the most compelling opener.
-- COMPANY POSITIONING: "I was on the ${company} site and noticed you [specific thing from homepage or about page]..." — Strong when their own words reveal a strategic priority.
-- CONTENT / THOUGHT LEADERSHIP: "I saw ${company} has been publishing content around [specific topic from blog block] — which tells me [specific implication]..." — Use when their content reveals a clear focus area.
-- BEHAVIORAL SIGNAL: "Noticed you spent some time on our [specific page] — that usually means [specific implication]..." — Use when page view data is meaningful.
-- INTENT TOPIC: "When a ${industryProfile.industryLabel} organization is actively researching ${intent_topic_searched || 'solutions like this'}, it usually points to [specific business implication]..." — Valid hook but do NOT lead with this every email. Use it when no stronger company-specific signal is available, or rotate it in after other hooks have been used.
+The first sentence must reference something Scott found when he looked at ${company} directly. It should feel like the first thing you'd say to someone after spending time on their website or reading their latest news. Casual. Specific. Like you actually did the homework.
 
-ROTATION RULE: Look at the prior emails block. If the last email opened with the intent topic, do NOT open with it again. Choose a different hook. Vary the opening signal across the sequence so the emails feel like ongoing research, not a template on repeat.
+Good examples of the right tone and specificity:
+- "Saw that ${company} just [specific news item] — congrats on that."
+- "Was on the ${company} site and noticed [specific thing from homepage or about page]. That kind of [growth/expansion/focus] usually creates [specific downstream challenge]."
+- "I caught your recent piece on [specific blog topic] — tells me [specific implication about their priorities]."
+- "The [specific award or recognition] for ${company} caught my attention. Organizations at that stage usually start running into [specific problem]."
+- "[Specific thing from their about page or positioning] stood out to me on the ${company} site."
 
-The opening sentence MUST mention ${company} by name OR reference something specific only ${company} would recognize.
+OPENING HOOK PRIORITY — pick the best one available that has not been used in a prior email:
+1. Recent news, award, announcement, or press mention — most compelling, use whenever available
+2. Something specific from their homepage headline or about page positioning
+3. A specific topic they have been publishing content about
+4. A behavioral signal (specific page they visited on TPG's site)
+5. Intent topic woven into a company-specific observation — ONLY as a last resort and NEVER as a standalone generic opener. If you use intent topic, it must be connected to something specific about ${company}, not just the industry in general.
+
+ROTATION RULE: Check the prior emails. If the last email opened with a website observation, lead with news this time. If it led with news, lead with content or behavioral. Keep rotating so each email feels like Scott checked in on ${company} again before writing.
+
+The opening sentence MUST name ${company} or reference something so specific that only ${company} would recognize it as being about them.
 
 BAD openers (NEVER USE):
 - "I hope this finds you well"
@@ -880,15 +890,16 @@ The ${industryProfile.industryLabel} industry context matters. Use industry-nati
   : 'season ticket renewals, partial plans, group sales, sponsorship activation, fan lifetime value, corporate suites, ticketing platforms, sponsorship pipelines'}.
 
 Every email must:
-1. Open with something Scott actually found when he looked at ${company}. Not a generic industry observation. Something specific to THEM.
-2. Connect what he found to a real business problem. Lead with the pain, not with HubSpot.
-3. Introduce HubSpot and TPG as the solution naturally, without assuming they already use it.
-4. Make the pain point feel inevitable for a company at ${company}'s stage.
-5. Include all required hyperlinks naturally woven into the copy.
-6. Stay under 110 words.
-7. End with a low-friction meeting ask.
+1. Open with a casual, specific observation about ${company} — something Scott found on their site or in their news. NEVER open with "When a [industry] organization is researching..." or any generic industry pattern. That is not an opener, it is a cop-out. The first sentence names ${company} or references something so specific it could only be about them.
+2. Keep the opening casual and natural — like Scott jotted this down after spending a few minutes on their site. Not formal. Not structured. Just direct and real.
+3. Connect what he found to a real business problem. Lead with the pain, not with HubSpot.
+4. Introduce HubSpot and TPG as the solution naturally, without assuming they already use it.
+5. Make the pain point feel inevitable for a company at ${company}'s stage.
+6. Include all required hyperlinks naturally woven into the copy.
+7. Stay under 110 words.
+8. End with a low-friction meeting ask.
 
-The goal: get ${firstname} to think "this person actually understands our business" and book time with Scott.`,
+The goal: get ${firstname} to think "this person actually spent time on our website and understands our business" and book time with Scott.`,
         messages: [{ role: "user", content: userContent }]
       },
       {
