@@ -1,0 +1,42 @@
+# Industry HubSpot Nurture — Scott Benedetti
+Email generation service for The Pedowitz Group
+
+## What This Does
+Generates personalized 10-email nurture sequences for contacts in the **Hotel/Lodging** and **Sports Team** industry categories who have searched for HubSpot solutions. Each email is written by Claude acting as Scott Benedetti, using live research scraped from the contact's company website combined with their HubSpot intent data.
+
+## Audience
+- **Industries:** Hotel/Lodging, Sports Teams
+- **Intent Topics:** Customer Insight, Customer Engagement, Marketing Automation Tools, Sales Automation, CRM Software, Customer Journey, Marketing Technology, CRM, Customer Journey Management, Lead Management
+
+## How It Works
+1. HubSpot workflow sends contact data to the `/enqueue` endpoint
+2. Server fetches `industry_category` and `intent_topic_searched` from HubSpot
+3. Server scrapes the contact's company website (homepage, about, leadership, news, blog)
+4. Claude writes a fully personalized email using the company research and intent data
+5. Subject line, HTML body, and plain text are written back to HubSpot contact properties
+
+## HubSpot Properties Written
+| Field | Property Name |
+|---|---|
+| Subject Line | `industry_hubspot_nurture_subject_line_em1` through `em10` |
+| Email Body (HTML) | `industry_hubspot_nurture_em1` through `em10` |
+| Email Body (Plain Text) | `industry_hubspot_nurture_claude_text_em1` through `em10` |
+| Processing Status | `ai_email_step_status` |
+
+## Case Study Links
+- **Hotel/Lodging:** Four Seasons case study included in emails 1, 4, and 8 only
+- **Sports Teams:** Random selection from 7 sports client case studies included in every email
+
+## Environment Variables
+| Variable | Description |
+|---|---|
+| `HUBSPOT_TOKEN` | HubSpot private app token |
+| `ANTHROPIC_API_KEY` | Anthropic API key |
+
+## Dashboard
+Live queue monitor available at `/dashboard`
+
+## Config
+- Concurrency: 5 simultaneous jobs
+- Queue interval: 1500ms
+- Max retries per contact: 2
