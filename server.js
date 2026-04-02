@@ -787,12 +787,17 @@ The subject line must be 8 words or fewer. No dashes or hyphens. Must be complet
 === OPENING SENTENCE RULES ===
 The opening sentence is the most important sentence in the email. It must contain a specific, researched observation about ${company} that proves Scott actually looked at their business before writing.
 
-REQUIRED: Choose ONE of these as your opening hook, in priority order:
-1. If you found recent news or an announcement — open with that: "I saw that ${company} recently [specific thing]..."
-2. If you found specific homepage positioning — open with that: "I was on the ${company} site and noticed [specific thing]..."
-3. If the intent topic is strong — open with that: "When a ${industryProfile.industryLabel} organization is researching ${intent_topic_searched || 'solutions like this'}, it usually means [specific implication]..."
-4. If you found content topics — open with that: "I saw ${company} has been writing about [specific topic] — which tells me [specific implication]..."
-5. If behavioral data is available — open with that: "Noticed you spent time on our [specific page] — that usually means [specific implication]..."
+REQUIRED: Choose the STRONGEST available signal as your opening hook. Do not default to the intent topic every time. Rotate across signals across the sequence so each email opens differently.
+
+Available hooks — use the best one for THIS email that has not been used in a prior email:
+
+- COMPANY NEWS: "I saw that ${company} recently [specific announcement from news block]..." — USE THIS FIRST when fresh news is available. It is the most compelling opener.
+- COMPANY POSITIONING: "I was on the ${company} site and noticed you [specific thing from homepage or about page]..." — Strong when their own words reveal a strategic priority.
+- CONTENT / THOUGHT LEADERSHIP: "I saw ${company} has been publishing content around [specific topic from blog block] — which tells me [specific implication]..." — Use when their content reveals a clear focus area.
+- BEHAVIORAL SIGNAL: "Noticed you spent some time on our [specific page] — that usually means [specific implication]..." — Use when page view data is meaningful.
+- INTENT TOPIC: "When a ${industryProfile.industryLabel} organization is actively researching ${intent_topic_searched || 'solutions like this'}, it usually points to [specific business implication]..." — Valid hook but do NOT lead with this every email. Use it when no stronger company-specific signal is available, or rotate it in after other hooks have been used.
+
+ROTATION RULE: Look at the prior emails block. If the last email opened with the intent topic, do NOT open with it again. Choose a different hook. Vary the opening signal across the sequence so the emails feel like ongoing research, not a template on repeat.
 
 The opening sentence MUST mention ${company} by name OR reference something specific only ${company} would recognize.
 
